@@ -3,13 +3,14 @@
 public class RotateNumber {
     public static void main(String[] args) {
         int num = 27391;
-        int k = -22;
+        int k = -1;
         rotationMethod1(num, k);
         rotationMethod2(num, k);
     }
 
     public static void rotationMethod1(int num, int k) {
-        int numLength = (countNumberOfDigits(num));
+        // int numLength = countNumberOfDigits(num);
+        int numLength = CountDigitOfNumber.countDigitOfNumber(num);
         k = k % numLength;
         if (k < 0) {
             k = k + numLength;
@@ -24,7 +25,8 @@ public class RotateNumber {
     }
 
     public static void rotationMethod2(int num, int k) {
-        int numLength = countNumberOfDigits(num);
+        // int numLength = countNumberOfDigits(num);
+        int numLength = CountDigitOfNumber.countDigitOfNumber(num);
 
         k = k % numLength;
         if (k < 0) {
@@ -45,14 +47,5 @@ public class RotateNumber {
         int remainder = num % divisor;
         int rotatedNum = (remainder * multiplier) + quotient;
         System.out.println(rotatedNum);
-    }
-
-    public static int countNumberOfDigits(int num) {
-        int numLength = 0;
-        while (num > 0) {
-            num /= 10;
-            numLength++;
-        }
-        return numLength;
     }
 }
