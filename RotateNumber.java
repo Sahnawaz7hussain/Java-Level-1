@@ -9,8 +9,8 @@ public class RotateNumber {
     }
 
     public static void rotationMethod1(int num, int k) {
-        // int numLength = countNumberOfDigits(num);
         int numLength = CountDigitOfNumber.countDigitOfNumber(num);
+
         k = k % numLength;
         if (k < 0) {
             k = k + numLength;
@@ -25,7 +25,6 @@ public class RotateNumber {
     }
 
     public static void rotationMethod2(int num, int k) {
-        // int numLength = countNumberOfDigits(num);
         int numLength = CountDigitOfNumber.countDigitOfNumber(num);
 
         k = k % numLength;
